@@ -27,4 +27,10 @@ function playGame(playerSelection, computerSelection) {
     }
 }
 
-playGame(playerChoice, computerChoice());
+function game() {
+    for (let i = 0; i <= 5; i++) {
+        playGame(playerChoice, computerChoice());
+    }
+}
+
+game();

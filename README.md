@@ -3,12 +3,13 @@
 Understand:  
 This game is going to be played completely from the console.
 Your game is going to play against the computer, so begin with a function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"  
-Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
+Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation). Finally make a function that will play 5 rounds and keeps score and reports a winner or loser at the end.
 
 PLAN:
 This game will be a browser console program.
 The user will enter rock, paper or scissors from a prompt. 
 The desired output is for a winner between the user and the computer to be decided by a function that will output "You Lose! Paper beats Rock" or "You Win! Rock beats scissors" 
+make a function that will play 5 rounds. 
 
 DIVIDE & CONQUER:
 The first subproblem we can solve is getting input from the user. 
@@ -41,5 +42,15 @@ function playGame(playerSelection, computerSelection) {
         console.log('You win scissors beats paper');
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
         console.log('It\'s a draw boo play again');
+    }
+}
+
+Fourth subproblem Write a function that takes the previous function and plays 5 round of Rock Paper Scissors. 
+
+We will use a for loop for this one
+
+function game() {
+    for(let i = 0; i <= 5; i++) {
+        playGame(playerSelection, computerChoice());
     }
 }
