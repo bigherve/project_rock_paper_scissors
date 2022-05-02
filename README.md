@@ -12,7 +12,7 @@ The desired output is for a winner between the user and the computer to be decid
 
 DIVIDE & CONQUER:
 The first subproblem we can solve is getting input from the user. 
-let playerChoice = prompt('Chose rock, paper or scissors', '');
+let playerChoice = prompt('Chose rock, paper or scissors', '').toLowerCase();
 
 Second subproblem is the computers choice we can get in from a function. function computerPlay() {
     let choices = ['Rock', 'Paper', 'Scissors'];
@@ -20,8 +20,26 @@ Second subproblem is the computers choice we can get in from a function. functio
     return choices[Math.floor(Math.random() * choices.length)] 
 }
 
-Third subproblem Write a function that plays a single round of Rock Paper Scissors. function playGame(playerSelection, computerSelection) {
-    if (playerSelection === /scissors/i && computerSelection === /rock/i) {
-        console.log('You lose rock beats paper');
+Third subproblem Write a function that plays a single round of Rock Paper Scissors. 
+
+function playGame(playerSelection, computerSelection) {
+      if (playerSelection === 'rock' && computerSelection === 'rock') {
+        console.log('It\'s a draw boo play again');
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        console.log('You lose paper beats rock');
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        console.log('You win rock beats scissors ');
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        console.log('You win paper beats rock');
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        console.log('It\'s a draw boo play again');
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        console.log('You lose scissors beats paper');
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        console.log('You lose rock beats scissors');
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        console.log('You win scissors beats paper');
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        console.log('It\'s a draw boo play again');
     }
 }
