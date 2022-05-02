@@ -12,7 +12,7 @@ The desired output is for a winner between the user and the computer to be decid
 
 DIVIDE & CONQUER:
 The first subproblem we can solve is getting input from the user. 
-let playerChoice = prompt('Chose rock, paper or scissors', '').toLowerCase();
+let playerChoice = prompt('Choose rock, paper or scissors', '').toLowerCase();
 
 Second subproblem is the computers choice we can get in from a function. function computerPlay() {
     let choices = ['Rock', 'Paper', 'Scissors'];
