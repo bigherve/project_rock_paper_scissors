@@ -10,6 +10,7 @@ This game will be a browser console program.
 The user will enter rock, paper or scissors from a prompt. 
 The desired output is for a winner between the user and the computer to be decided by a function that will output "You Lose! Paper beats Rock" or "You Win! Rock beats scissors" 
 make a function that will play 5 rounds. 
+And keeps score and reports a winner or loser at the end.
 
 DIVIDE & CONQUER:
 The first subproblem we can solve is getting input from the user. 
@@ -25,7 +26,9 @@ Third subproblem Write a function that plays a single round of Rock Paper Scisso
 
 function playGame(playerSelection, computerSelection) {
       if (playerSelection === 'rock' && computerSelection === 'rock') {
-        console.log('It\'s a draw boo play again');
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         console.log('You lose paper beats rock');
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -33,7 +36,9 @@ function playGame(playerSelection, computerSelection) {
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         console.log('You win paper beats rock');
     } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        console.log('It\'s a draw boo play again');
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         console.log('You lose scissors beats paper');
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
@@ -41,7 +46,9 @@ function playGame(playerSelection, computerSelection) {
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         console.log('You win scissors beats paper');
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-        console.log('It\'s a draw boo play again');
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
     }
 }
 
@@ -53,4 +60,55 @@ function game() {
     for(let i = 0; i <= 5; i++) {
         playGame(playerSelection, computerChoice());
     }
+}
+
+Fifth subproblem Add a way to keep score and report a winner or loser at the end of the game function.
+
+let playerScore = 0;
+    let pcScore = 0;
+
+function playGame(playerSelection, computerSelection) {
+      if (playerSelection === 'rock' && computerSelection === 'rock') {
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        console.log('You lose paper beats rock');
+        pcScore++;
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        console.log('You win rock beats scissors ');
+        playerScore++;
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        console.log('You win paper beats rock');
+        playerScore++;
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        console.log('You lose scissors beats paper');
+        pcScore++;
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        console.log('You lose rock beats scissors');
+        pcScore++;
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        console.log('You win scissors beats paper');
+        playerScore++;
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        console.log('It\'s a draw boo');
+        pcScore + 0;
+      playerChoice + 0;
+    }
+}
+
+function game() {
+    for(let i = 0; i <= 5; i++) {
+        playGame(playerSelection, computerChoice());
+    } if (playerScore > pcScore) {
+            console.log('You win my G');
+        } else if (playerScore < pcScore) {
+            console.log('You lose my G');
+        } else {
+            console.log('Its a draw my G play again');
+        }
 }
