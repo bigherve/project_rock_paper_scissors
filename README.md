@@ -63,11 +63,14 @@ function game() {
 }
 
 Fifth subproblem Add a way to keep score and report a winner or loser at the end of the game function.
-
+let playerChoice
 let playerScore = 0;
-    let pcScore = 0;
+let pcScore = 0;
 
 function playGame(playerSelection, computerSelection) {
+
+playerChoice = prompt('Choose rock, paper or scissors', '').toLowerCase();
+
       if (playerSelection === 'rock' && computerSelection === 'rock') {
         console.log('It\'s a draw boo');
         pcScore + 0;
@@ -105,10 +108,10 @@ function game() {
     for(let i = 0; i <= 5; i++) {
         playGame(playerSelection, computerChoice());
     } if (playerScore > pcScore) {
-            console.log('You win my G');
+            console.log(`You win my G (${playerScore} - ${pcScore})`);
         } else if (playerScore < pcScore) {
-            console.log('You lose my G');
+            console.log(`You lose my G (${pcScore} - ${playerScore})`);
         } else {
-            console.log('Its a draw my G play again');
+            console.log(`Its a draw my G play again (${pcScore} - ${playerScore})`);
         }
 }

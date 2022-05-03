@@ -1,4 +1,4 @@
-let playerChoice = prompt('Choose rock, paper or scissors', '').toLowerCase();
+let playerChoice
 let playerScore = 0;
 let pcScore = 0;
 let computerChoice = function() {
@@ -7,6 +7,8 @@ let computerChoice = function() {
 };
 
 function playGame(playerSelection, computerSelection) {
+    playerChoice = prompt('Choose rock, paper or scissors', '').toLowerCase();
+
     if (playerSelection === 'rock' && computerSelection === 'rock') {
         console.log('It\'s a draw boo');
         pcScore + 0;
@@ -45,11 +47,11 @@ function game() {
         playGame(playerChoice, computerChoice());
     }
     if (playerScore > pcScore) {
-        console.log('You win my G');
+        console.log(`You win my G (${playerScore} - ${pcScore})`);
     } else if (playerScore < pcScore) {
-        console.log('You lose my G');
+        console.log(`You lose my G (${pcScore} - ${playerScore})`);
     } else {
-        console.log('Its a draw my G play again');
+        console.log(`Its a draw my G play again (${pcScore} - ${playerScore})`);
     }
 }
 
